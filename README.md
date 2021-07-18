@@ -1,5 +1,7 @@
 # TestTemerix
-this project is a completed test task from the company
+this project is a completed test task from the company Temerix
+
+Условия тестов:
 
 1. в разделе "Электроинструменты" / "Дрели" на  трех товарах с акционным тикетом  проверить есть ли в карточке товара акционная цена
 Для этого, из раздела "Электроинструменты"  перейти в раздел "Дрели"  используя меню.
