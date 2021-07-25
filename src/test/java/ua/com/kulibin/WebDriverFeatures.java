@@ -1,12 +1,19 @@
 package ua.com.kulibin;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Locatable;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class WebDriverFeatures extends WebDriverSettings{
+public class WebDriverFeatures extends WebDriverSettings {
+
+    // инициализация драйвера
+    public WebDriver driver;
+
+    // конструктор
+    public WebDriverFeatures(WebDriver driver){
+        this.driver = driver;
+    }
+
     /**
      * метод возвращает веб-драйвер на предыдущую страницу
      */
@@ -28,15 +35,16 @@ public class WebDriverFeatures extends WebDriverSettings{
     /**
      * метод возвращает true - если передан элемент с таким идентификатором
      * в параметрах присутствует на странице; false - иначе
-     * @param idElement идентификатор элемента
+     * @param locator идентификатор элемента
      * @return true - если элемент с переданым идентификатором существует; false - в противном случаи
      */
-    public boolean isElementPresent(By idElement) {
+    public boolean isElementPresent(By locator) {
         try {
-            driver.findElement(idElement);
+            driver.findElement(locator);
             return true;
         } catch (NoSuchElementException e) {
             return false;
         }
     }
+
 }
